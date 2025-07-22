@@ -1,20 +1,31 @@
-# About GitHub Apps
+# 🧭 Stage 1: Introduction to GitHub Apps
 
-## What Are GitHub Apps?
+## 🔍 What is a GitHub App?
 
-GitHub Apps are tools that extend GitHub's functionality. They can perform actions on GitHub such as:
-- Opening issues
-- Commenting on pull requests
-- Managing projects
+A **GitHub App** is a type of integration that:
+- Acts as a **separate identity** (not tied to a user account),
+- Can be installed on multiple repositories or organizations,
+- Has **fine-grained permissions** (e.g., read-only access to issues),
+- Communicates with GitHub via **API** and **webhooks**.
 
-They can also respond to GitHub events and trigger actions outside of GitHub.  
-For example, a GitHub App can post a message on Slack when an issue is opened on GitHub.
+## 🆚 GitHub App vs OAuth App
 
-## Finding GitHub Apps
+| Feature     | GitHub App                        | OAuth App                      |
+|-------------|-----------------------------------|--------------------------------|
+| Identity    | Acts as an app                    | Acts as a user                 |
+| Permissions | Granular, per repo/org            | Broad, user-level              |
+| Installation| Can be installed on multiple repos/orgs | Tied to a single user     |
+| Webhooks    | Built-in support                  | Must be implemented manually   |
 
-You can discover GitHub Apps on the [GitHub Marketplace](https://github.com/marketplace).
+## 🔐 How does authentication work?
 
-## Building Your Own GitHub App
+1. The GitHub App generates a **JWT (JSON Web Token)** signed with its private key.
+2. The JWT is used to request an **installation token** for a specific installation.
+3. The installation token is used to make authenticated API requests to GitHub.
 
-You can also build your own GitHub App.  
-For more information, see [About creating GitHub Apps](https://docs.github.com/en/apps/creating-github-apps/about-creating-github-apps).
+ **Documentation**:
+   - [GitHub Docs: About GitHub Apps](https://docs.github.com/en/apps/overview)
+   
+
+## About using GitHub Apps
+
