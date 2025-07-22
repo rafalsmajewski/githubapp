@@ -47,3 +47,22 @@ GitHub Apps are the official way to build integrations with GitHub. They are app
 ## 🧪 Example Use Case
 
 > A GitHub App listens for the `pull_request` webhook. When a PR is opened, it checks the title and automatically adds a `needs-review` label.
+
+
+# GitHub Apps vs GitHub Actions
+
+| Feature           | GitHub Apps                                                                 | GitHub Actions                                                             |
+|------------------|------------------------------------------------------------------------------|----------------------------------------------------------------------------|
+| **Purpose**       | Build external integrations with GitHub (e.g., bots, services)              | Automate workflows like CI/CD inside a GitHub repository                   |
+| **Execution**     | Runs externally (e.g., on your server or cloud platform)                    | Runs inside GitHub-hosted runners                                          |
+| **Authentication**| Uses JWT + installation tokens                                              | Uses `GITHUB_TOKEN` provided by GitHub                                     |
+| **Installation**  | Installed on repos/orgs with specific permissions                           | Defined in `.github/workflows/*.yml` in the repo                           |
+| **Event Handling**| Listens to GitHub webhooks (e.g., `issues`, `pull_request`)                 | Reacts to GitHub Actions events (e.g., `push`, `pull_request`)            |
+| **Use Cases**     | Bots, integrations with external systems (Slack, Jira, CI/CD)               | Build, test, deploy code; automate repo-specific tasks                     |
+| **Security**      | Fine-grained, per-repo/org permissions                                       | Scoped to the repository and workflow context                              |
+| **Flexibility**   | Highly customizable, reusable across multiple repos/orgs                    | Tightly coupled to the repository it lives in                              |
+
+## Summary
+
+- Use **GitHub Apps** when you need to build **external services** that interact with GitHub via API and webhooks.
+- Use **GitHub Actions** when you want to **automate internal workflows** like testing, building, or deploying code directly in your repository.
