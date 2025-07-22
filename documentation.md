@@ -24,6 +24,5 @@ A **GitHub App** is a type of integration that:
 3. The installation token is used to make authenticated API requests to GitHub.
 
  **Documentation**:
-   - [GitHub Docs: About GitHub Apps](https://docs.github.com/en/apps/creating-github-apps/about-creating-github-apps)
-   - [GitHub Docs: Authenticating as a GitHub App](https://docs.github.com/en/apps/creating-github-apps/authenticating-with-github-apps)
-
+   - [GitHub Docs: About GitHub Apps](https://docs.github.com/en/apps/overview)
+   
